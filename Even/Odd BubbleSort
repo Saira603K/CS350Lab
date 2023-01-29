@@ -1,0 +1,37 @@
+#include <stdio.h>
+/*An arry with  ascendingly sorted odd numbers first and 
+followed by sorted even numbers */
+int main(){
+  int n, a[20], temp;//declaring the variables
+   printf("Enter the size of the array: ");//asking user input
+   scanf("%d", &n);//storing user input
+   printf("Enter the %d of Elements: ", n);
+   //storing the user input in an array
+   for(int i = 0; i < n; i++){
+      scanf("%d", &a[i]);
+    }
+   //sorting the array by bubble sort
+   for(int i = 0; i < n - 1; i++){
+     for(int j = 0; j < n - i - 1; j++){
+       if(a[j] > a[j + 1]){
+         temp = a[j];
+         a[j] = a[j + 1];
+         a[j + 1] = temp;
+         }
+       }
+     }
+   printf("After sorting output sequence: ");
+  //sorting the odd numbers first, then even
+   for(int i = 0; i < n; i++){
+     if (a[i]%2!=0){
+       printf("%d ", a[i]);
+     }
+     }
+  for (int i =0; i < n; i++){
+    if(a[i] % 2 == 0)
+      printf("%d ", a[i]);
+  }
+     
+     
+   return 0;
+}
