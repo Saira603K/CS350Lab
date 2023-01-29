@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <math.h>
+/*Cuts to pieces */
+/* The recurrence relation f(n + 1) = f(n) + (n + 1) with initial condition f(0)=1. Solving the recurrence, we see that the number of pancake pieces after n cuts is (n2 + n + 2)/2.
+From https://www.robertdickau.com/pancake.html*/
+
+// Putting the mathematical equation into C
+int main(){
+  int n, pieces;
+  printf("Enter the number of cuts: ");
+  scanf("%d", &n);
+  
+  pieces = (pow(n,2) + n + 2)/ 2;
+  printf("Number of pieces for %d cuts: ", n);
+  printf("%d ", pieces);
+     
+     
+   return 0;
+}
