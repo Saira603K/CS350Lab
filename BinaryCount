@@ -1,0 +1,21 @@
+# include <stdio.h>
+// Count the number of binary 1s in a given digital number
+int main(){
+  int a[10], n, i, r;// declaring variables
+  printf("Enter the decimal number: ");//taking user input
+  scanf("%d", &n);//storing user input
+  //to count the number of 1s
+  for(i=0; n>0; i++){
+    a[i] = n%2;//remainder is stored in array
+    n = n/2;//divide the number by 2
+    if(a[i] == 1){//to check if the remainder is 1
+      r++;//count the 1s then repeat
+    }
+  }
+  printf("Binary number for the given deciamal number is: ");
+  for(i =i-1; i >=0; i--){
+    printf("%d", a[i]);
+  }
+  printf("\nThere are %d ones in the given decimal number ", r);
+  return 0;
+}
