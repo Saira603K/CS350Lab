@@ -1,0 +1,35 @@
+#include <stdio.h>
+/*1. Write a program to read-in numbers (integer) from keyboard and save them to an array, 
+and then sort them ascendingly by bubble sorting method. After that, print them out*/
+  // Online C compiler to run C program online
+ int main(){
+   int n, a[20], temp;//declaring the variables
+   printf("Enter the size of the array: ");//asking user input
+   scanf("%d", &n);//storing user input
+   printf("Enter the %d of Elements: ", n);
+   //storing the user input in an array
+   for(int i = 0; i < n; i++){
+      scanf("%d", &a[i]);
+    }
+   //sorting the array by bubble sort
+   for(int i = 0; i < n - 1; i++){
+     for(int j = 0; j < n - i - 1; j++){
+       if(a[j] > a[j + 1]){
+         temp = a[j];
+         a[j] = a[j + 1];
+         a[j + 1] = temp;
+         }
+       }
+     }
+   printf("Array after implementing bubble sort: ");
+   for(int i = 0; i < n; i++){
+     printf("%d ", a[i]);
+     }
+   return 0;
+}
+
+
+  
+
+
+  
