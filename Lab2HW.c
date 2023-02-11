@@ -14,9 +14,11 @@ int main(){
   //return 0;
 //=====================================================================
 //Question 2: Reverse a given number
+  //to reverse a long number use long int
+  // and %ld for printf and scanf
   int integer, reverse = 0, remainder;// assigning the variables
   printf("Question 2: Enter a number: ");//ask for user input
-  scanf("%d/n", &integer); //read the user input
+  scanf("%ld/n", &integer); //read the user input
   //reverse the given number using a while loop
   while (integer != 0)//check if the number is 0
   {
@@ -24,7 +26,7 @@ int main(){
     reverse = reverse * 10 + remainder; //reverse is multipied by 10 and added to the remainder
     integer /= 10;
     }
-  printf("Answer2: Reversed number: %d\n", reverse);
+  printf("Answer2: Reversed number: %ld\n", reverse);
   printf("\n");
   //return 0; 
 //====================================================================
