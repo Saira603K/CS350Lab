@@ -24,6 +24,7 @@ def diffElem_LL(l, m):
         current = current.next
 
     # Find difference elements
+    # using symmetric_difference method
     diff_set = set_l.symmetric_difference(set_m)
 
     # Create a new linked list with difference elements
