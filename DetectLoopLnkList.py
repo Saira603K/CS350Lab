@@ -6,11 +6,11 @@ class ListNode:
 
 def is_LoopLL(head):
     outer = head
-    nodesTraversedByOuter = 0
+    nodes = 0 #nodes Traversed by outer
     while outer != None:
         outer = outer.next
-        nodesTraversedByOuter += 1
-        k = nodesTraversedByOuter
+        nodes += 1
+        k = nodes
         inner = head
             # iterating inner loop from head to number of nodes traversed by outer at this point.
         while k > 0:
