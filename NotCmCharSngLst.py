@@ -7,35 +7,43 @@ class Node:
         self.next = None
 
 def diffElem_LL(l, m):
+    # Create two sets to keep track of elements in each linked list
     set_l = set()
     set_m = set()
-    diff_set = set()
 
-    # Convert linked list l to a set
+    # Traverse linked list l and add elements to set_l
     current = l.next
     while current is not None:
         set_l.add(current.value)
         current = current.next
 
-    # Convert linked list m to a set
+    # Traverse linked list m and add elements to set_m
     current = m.next
     while current is not None:
         set_m.add(current.value)
         current = current.next
 
-    # Find difference elements
-    # using symmetric_difference method
-    diff_set = set_l.symmetric_difference(set_m)
-
     # Create a new linked list with difference elements
     new_list = Node("Head")
     current = new_list
 
-    for char in diff_set:
-        current.next = Node(char)
+    # Traverse linked list l and add elements to new_list if they are not in set_m
+    current = l.next
+    while current is not None:
+        if current.value not in set_m:
+            current_node = Node(current.value)
+            current_node.next = new_list.next
+            new_list.next = current_node
         current = current.next
 
-    current.next = None
+    # Traverse linked list m and add elements to new_list if they are not in set_l
+    current = m.next
+    while current is not None:
+        if current.value not in set_l:
+            current_node = Node(current.value)
+            current_node.next = new_list.next
+            new_list.next = current_node
+        current = current.next
 
     return new_list
 
